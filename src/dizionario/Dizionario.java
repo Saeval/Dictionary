@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.swing.JOptionPane;
+
 import dizionario.io.LettoreFile;
 
 public class Dizionario {
@@ -11,10 +13,14 @@ public class Dizionario {
 	private HashMap<String, String> dizionario;
 	private ArrayList<String> parole = new ArrayList<String>();
 	private ArrayList<String> traduzioni = new ArrayList<String>();
-//	private static LettoreFile lettoreFile;
+	private LettoreFile unicoLettore = LettoreFile.getUnicoLettore();
 	
 	public Dizionario() {
-		dizionario = new HashMap<String, String>();
+		try {
+			inizializzaDizionario(unicoLettore);
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e.toString(), "Errore!", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 	
 	public HashMap<String, String> getDizionario() {
@@ -28,6 +34,4 @@ public class Dizionario {
 		}
 	}
 	
-	
-
 }
