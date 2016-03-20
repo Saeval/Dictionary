@@ -1,0 +1,2 @@
+Casa:Maison
+Pizza:Pizza
