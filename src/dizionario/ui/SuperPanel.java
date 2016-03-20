@@ -16,7 +16,7 @@ public class SuperPanel extends JPanel{
 		super();
 		setLayout(new GridLayout(3, 1));
 		add(mediator.getTextField());
-		add(mediator.getBottoneDiVerifica());
+		add(mediator.getButton());
 		add(mediator.getTextArea());
 		
 		mediator.getTextArea().setEditable(false);
